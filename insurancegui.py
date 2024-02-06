@@ -1,6 +1,8 @@
 import streamlit as st
 import pickle 
 import numpy as np
+
+
 pickle_in = open('insurance1.pkl','rb')
 insurance = pickle.load(pickle_in)
 
