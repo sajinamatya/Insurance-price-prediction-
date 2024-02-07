@@ -1,1 +1,1 @@
-https://insurancesprice.streamlit.app/
+link : https://insurancesprice.streamlit.app/
