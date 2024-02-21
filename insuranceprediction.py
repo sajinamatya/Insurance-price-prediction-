@@ -66,10 +66,7 @@ data.describe()
 # %%
 data.isnull().sum()
 
-# %% [markdown]
-# ## Univariate data analysis
 
-# %%
 plt.figure(figsize=(8,6))
 sns.histplot(data['age'], bins=30, kde=True,color='red')
 plt.xlabel('age')
@@ -204,13 +201,6 @@ model.fit(X_train, y_train)
 # # Prediction on training data 
 
 # %%
-y_pred = model.predict(X_train)
-
-# %% [markdown]
-# # Prediction on test data 
-
-# %%
-y_pred2 = model.predict(X_test)
 
 # %%
 print(y_pred.shape)
