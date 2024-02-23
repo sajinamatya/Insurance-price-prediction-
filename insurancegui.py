@@ -59,7 +59,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="big-font">Insurance price prediction</p>', unsafe_allow_html=True)
+st.markdown('<p class="big-font">Insurance price predictions</p>', unsafe_allow_html=True)
 
 
 age= st.text_input("Enter your age ")
