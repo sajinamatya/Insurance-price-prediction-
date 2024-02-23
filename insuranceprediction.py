@@ -13,34 +13,27 @@ from sklearn.preprocessing import LabelEncoder
 import numpy as np 
 import statsmodels.api as sm 
 
-# %% [markdown]
-# # Data collection 
 
-# %%
+
+
 data = pd.read_csv("insurance.csv")
 print(data)
 
-# %% [markdown]
-# # Explorative Data Analysis
 
-# %% [markdown]
-# ## Data inspection 
 
-# %%
+
+
+
 data.head()
 
-# %%
 data.tail()
 
 
-# %% [markdown]
-# ## Data types of the columns 
 
 # %%
 data.dtypes
 
-# %% [markdown]
-# ## Information about the column of a dataframe 
+
 
 # %%
 data.info()
