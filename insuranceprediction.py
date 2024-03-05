@@ -1,7 +1,6 @@
-# %% [markdown]
-# # Importing necessary libraries 
 
-# %%
+
+
 import pandas as pd 
 import matplotlib.pyplot as plt 
 import seaborn as sns
@@ -22,8 +21,6 @@ print(data)
 
 
 
-
-
 data.head()
 
 data.tail()
@@ -35,28 +32,22 @@ data.dtypes
 
 
 
-# %%
+
 data.info()
 
-# %% [markdown]
-# ## Number of rows and columns in a dataframe
 
-# %%
 data.shape
 
 
-# %% [markdown]
-# ## Descriptive Statistics 
+
 
 # %%
 data.describe()
 
 
-# %% [markdown]
-# ## Inspection of missing value
-# 
 
-# %%
+
+
 data.isnull().sum()
 
 
@@ -75,7 +66,7 @@ plt.ylabel('Frequency')
 plt.title('Distribution of bmi');
 plt.show()
 
-# %%
+
 plt.figure(figsize=(8,6))
 sns.histplot(data['charges'], bins=50, kde=True,color='red')
 plt.xlabel('charge')
@@ -83,7 +74,7 @@ plt.ylabel('Frequency')
 plt.title('Distribution of charge');
 plt.show()
 
-# %%
+
 data['charges'].median()
 
 # %%
@@ -97,26 +88,24 @@ plt.title('countplot for region column')
 data1 = data['sex'].value_counts()
 plt.pie(data1,labels=data1.keys(), autopct='%.0f%%')
 
-# %% [markdown]
-# ## Bivariate analysis
 
-# %%
+
+
 sns.pairplot(data,diag_kind='kde',hue='sex')
 plt.show()
 
-# %%
+
 sns.heatmap(data[['charges','children','bmi','age']].corr(),annot=True,cmap='coolwarm')
 
-# %%
 sns.jointplot(x='charges',y='age',data=data,kind='hex')
 
-# %%
+
 sns.regplot(x='charges',y='age',data=data,scatter_kws={'alpha': 0.5},line_kws={'alpha': 0.7, 'color': 'red'})
 
-# %%
+
 sns.jointplot(x='charges',y='bmi',data=data,kind='hex')
 
-# %%
+
 sns.regplot(x='charges',y='bmi',data=data,scatter_kws={'alpha': 0.5},line_kws={'alpha': 0.7, 'color': 'green'})
 
 # %%
