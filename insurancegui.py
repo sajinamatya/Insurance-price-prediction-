@@ -37,8 +37,6 @@ with open('insurance.pkl','wb') as file:
     file.close()
 
 
-
-
 pickle_in = open('insurance.pkl','rb')
 insurance = pickle.load(pickle_in)
 
