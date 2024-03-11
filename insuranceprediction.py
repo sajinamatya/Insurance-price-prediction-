@@ -39,9 +39,6 @@ data.info()
 data.shape
 
 
-
-
-# %%
 data.describe()
 
 
@@ -58,7 +55,7 @@ plt.ylabel('Frequency')
 plt.title('Distribution of age')
 plt.show()
 
-# %%
+
 plt.figure(figsize=(8,6))
 sns.histplot(data['bmi'], bins=30, kde=True,color='green')
 plt.xlabel('bmi')
@@ -77,14 +74,13 @@ plt.show()
 
 data['charges'].median()
 
-# %%
 data['region'].value_counts().plot(kind='bar',width =0.6,color = 'green')
 plt.ylim(0,500)
 plt.xlabel('Region')
 plt.ylabel('count')
 plt.title('countplot for region column')
 
-# %%
+
 data1 = data['sex'].value_counts()
 plt.pie(data1,labels=data1.keys(), autopct='%.0f%%')
 
@@ -108,11 +104,11 @@ sns.jointplot(x='charges',y='bmi',data=data,kind='hex')
 
 sns.regplot(x='charges',y='bmi',data=data,scatter_kws={'alpha': 0.5},line_kws={'alpha': 0.7, 'color': 'green'})
 
-# %%
+
 dada = pd.crosstab(data['region'],data['sex'])
 print(dada)
 
-# %%
+
 dada.plot(kind='bar',stacked=False)
 plt.ylabel('count')
 
@@ -129,24 +125,15 @@ data['encoded_smoker'] = encoded_smoker
 print(data.head(20))
 
 
-# %% [markdown]
-# # Removing columns 
-
-# %%
 
 data.drop(['sex','smoker'], axis=1, inplace=False)
 # 0 is female and no 
 
-# %% [markdown]
-# # Changing the order of the dataframe columns 
 
-# %%
 data = data.loc[:,['age','bmi','children','region','sex_encoded','encoded_smoker','charges']]
 print(data)
 
-# %% [markdown]
-# # Feature  scaling 
-# 
+
 
 # %%
 scaler =  MinMaxScaler()
@@ -154,9 +141,7 @@ scale_data =scaler.fit_transform(data[['age','bmi']])
 data12 = pd.DataFrame(scale_data)
 print(data12.head())
 
-# %% [markdown]
-# 
-# # Feature Selection 
+
 
 # %%
 # feature 
